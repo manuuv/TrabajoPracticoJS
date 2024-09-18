@@ -1,7 +1,14 @@
-let c = prompt("Ingrese °C")
-console.log(c+"°C son equivalentes a "+convertirCelciusAFahrenheit(c)+"°F");
-
-function convertirCelciusAFahrenheit(c){
-    let f = c * 1.8 + 32;
-    return f;
+let persona ={
+    nombre: "Manuel",
+    edad: 21,
+    ciudad: "Córdoba"
 }
+
+console.log(persona);
+
+const cambiarCiudad = (persona) => {
+    persona.ciudad = "Mendoza";
+}
+
+cambiarCiudad(persona);
+console.log(persona);
