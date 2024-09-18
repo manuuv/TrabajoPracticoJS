@@ -1,10 +1,7 @@
-let num1 = 8;
-let num2 = 7;
-console.log("El número "+num1+" es par: "+ esPar(num1));
-console.log("El número "+num2+" es par: "+ esPar(num2));
+let c = prompt("Ingrese °C")
+console.log(c+"°C son equivalentes a "+convertirCelciusAFahrenheit(c)+"°F");
 
-function esPar(a){
-    let y;
-    a % 2 == 0 ? y=true : y=false;
-    return y;
+function convertirCelciusAFahrenheit(c){
+    let f = c * 1.8 + 32;
+    return f;
 }
