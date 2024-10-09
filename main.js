@@ -1,14 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const mostrarAlerta = document.getElementById("boton");
-  
-    if (mostrarAlerta) {
-        const getDataInput = () => {
-            const texto = document.getElementById("texto").value;
-            alert("Has ingresado: " + texto);
-        }  
+    const lista = document.getElementById("lista");
 
-        mostrarAlerta.addEventListener('click', () => {
-            getDataInput();
-        })
+    if (lista) {
+        const getDataInput = (event) => {
+            const texto = event.target.textContent;
+            console.log(texto);
+        }
+
+        lista.addEventListener('click', (event) => {
+            if (event.target.tagName === 'LI') {
+                getDataInput(event);
+            }
+        });
     }
-  });
+});
