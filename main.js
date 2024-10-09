@@ -1,15 +1,24 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const lista = document.getElementById("lista");
 
-    if (lista) {
-        const getDataInput = (event) => {
-            const texto = event.target.textContent;
-            console.log(texto);
-        }
+    const texto = document.getElementById("texto");
+    const boton1 = document.getElementById("boton1");
+    const boton2 = document.getElementById("boton2");
 
-        lista.addEventListener('click', (event) => {
-            if (event.target.tagName === 'LI') {
-                getDataInput(event);
+    let deshabiitado = false;
+
+    if (texto && boton1 && boton2) {
+        
+        boton1.addEventListener('click', (event) => {
+            if (deshabiitado == false) {
+                texto.disabled = true;
+                deshabiitado = true;
+            }
+        });
+
+        boton2.addEventListener('click', (event) => {
+            if (deshabiitado == true) {
+                texto.disabled = false;
+                deshabiitado = false;
             }
         });
     }
