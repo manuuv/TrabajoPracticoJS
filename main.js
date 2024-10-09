@@ -1,27 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const cambiarColor = document.getElementById("boton");
+    const mostrarAlerta = document.getElementById("boton");
   
-    if (cambiarColor) {
+    if (mostrarAlerta) {
+        const getDataInput = () => {
+            const texto = document.getElementById("texto").value;
+            alert("Has ingresado: " + texto);
+        }  
 
-      const parrafos = document.querySelectorAll("p");
-      const coloresOriginales = [];
-  
-      parrafos.forEach(function(parrafo) {
-        coloresOriginales.push(parrafo.style.color);
-      });
-  
-      let esAzul = false;
-  
-      cambiarColor.addEventListener("click", function() {
-
-        parrafos.forEach(function(parrafo, index) {
-          if (esAzul) {
-            parrafo.style.color = coloresOriginales[index];
-          } else {
-            parrafo.style.color = "blue";
-          }
-        });
-        esAzul = !esAzul;
-      });
+        mostrarAlerta.addEventListener('click', () => {
+            getDataInput();
+        })
     }
   });
