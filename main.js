@@ -1,9 +1,27 @@
-let pares = [];
+document.addEventListener("DOMContentLoaded", function() {
+    const cambiarColor = document.getElementById("boton");
+  
+    if (cambiarColor) {
 
-for (let i = 1; i<=20; i++){
-    if(i % 2 == 0){
-        pares.push(i);
+      const parrafos = document.querySelectorAll("p");
+      const coloresOriginales = [];
+  
+      parrafos.forEach(function(parrafo) {
+        coloresOriginales.push(parrafo.style.color);
+      });
+  
+      let esAzul = false;
+  
+      cambiarColor.addEventListener("click", function() {
+
+        parrafos.forEach(function(parrafo, index) {
+          if (esAzul) {
+            parrafo.style.color = coloresOriginales[index];
+          } else {
+            parrafo.style.color = "blue";
+          }
+        });
+        esAzul = !esAzul;
+      });
     }
-}
-
-console.log("Primeros 10 números pares: " + pares.join(', '));
+  });
